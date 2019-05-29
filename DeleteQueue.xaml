@@ -60,7 +60,7 @@
       <AssemblyReference>Newtonsoft.Json</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="동적으로 Queue를 삭제함 &#xD;&#xA;&#xD;&#xA;Input&#xD;&#xA; - in_QueueName: string - 삭제하고자 하는 Queue 이름 &#xD;&#xA;&#xD;&#xA;Output&#xD;&#xA; - out_StatusCode: int32 - Orchestrator REST API Status Code ( 정상적으로 삭제시 204) &#xD;&#xA; - out_Response: string - 상태에 맞는 메시지 (오류시 오류 메세지 전달) " DisplayName="DeleteQueue" sap:VirtualizedContainerService.HintSize="1197,1960" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="동적으로 Queue를 삭제함 &#xA;&#xA;Input&#xA; - in_QueueName: string - 삭제하고자 하는 Queue 이름 &#xA;&#xA;Output&#xA; - out_StatusCode: int32 - Orchestrator REST API Status Code ( 정상적으로 삭제시 204) &#xA; - out_Response: string - 상태에 맞는 메시지 (오류시 오류 메세지 전달) " DisplayName="DeleteQueue" sap:VirtualizedContainerService.HintSize="1197,1960" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Int32" Name="StatusCode" />
       <Variable x:TypeArguments="x:String" Name="Response" />
@@ -89,7 +89,7 @@
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:InvokeCode ContinueOnError="{x:Null}" Code="Dim jObj As Newtonsoft.Json.Linq.JObject&#xD;&#xA;Dim jArr As Newtonsoft.Json.Linq.JArray&#xD;&#xA;jObj = Newtonsoft.Json.Linq.JObject.Parse( response)&#xD;&#xA;jArr = CType( jObj(&quot;value&quot;), Newtonsoft.Json.Linq.JArray)&#xD;&#xA;If jArr.Count = 1 Then&#xD;&#xA;&#x9;queueId = jArr(0)(&quot;Id&quot;).ToString&#xD;&#xA;End If&#xD;&#xA;" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="864,164" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
+          <ui:InvokeCode ContinueOnError="{x:Null}" Code="Dim jObj As Newtonsoft.Json.Linq.JObject&#xA;Dim jArr As Newtonsoft.Json.Linq.JArray&#xA;jObj = Newtonsoft.Json.Linq.JObject.Parse( response)&#xA;jArr = CType( jObj(&quot;value&quot;), Newtonsoft.Json.Linq.JArray)&#xA;If jArr.Count = 1 Then&#xA;&#x9;queueId = jArr(0)(&quot;Id&quot;).ToString&#xA;End If&#xA;" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="864,164" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
             <ui:InvokeCode.Arguments>
               <OutArgument x:TypeArguments="x:String" x:Key="queueId">[QueueId]</OutArgument>
               <InArgument x:TypeArguments="x:String" x:Key="response">[Response]</InArgument>
